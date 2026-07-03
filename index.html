@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<!-- Self-contained except GoatCounter (privacy-friendly, cookieless page-view counting — no
+     personal data; the game itself never sends anything). Strict named-host allowlist. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://gc.zgo.at; style-src 'self'; img-src 'self' data: https://rollo.goatcounter.com; connect-src https://rollo.goatcounter.com; manifest-src 'self'; base-uri 'none'; form-action 'none'" />
+<title>ROLLO — a small game about courage</title>
+<meta name="description" content="A small wordless game about courage, after Rollo May. The stones ahead shimmer; looking longer never resolves them — only stepping does. The fog will not lift. Go anyway." />
+<meta name="color-scheme" content="dark" />
+<meta name="theme-color" content="#12100E" />
+<link rel="apple-touch-icon" href="assets/icon-180.png" />
+<link rel="manifest" href="manifest.webmanifest" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-title" content="ROLLO" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta property="og:title" content="ROLLO — a small game about courage" />
+<meta property="og:description" content="A wordless game after Rollo May: commitment in spite of doubt, made playable. The fog will not lift. Go anyway." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://hulkiokantabak.github.io/rollo/" />
+<meta property="og:image" content="https://hulkiokantabak.github.io/rollo/assets/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<link rel="canonical" href="https://hulkiokantabak.github.io/rollo/" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2312100E'/%3E%3Cellipse cx='10' cy='24' rx='5' ry='2.6' fill='%234a453f'/%3E%3Cellipse cx='23' cy='21' rx='4.4' ry='2.3' fill='%234a453f' opacity='0.5'/%3E%3Ccircle cx='17' cy='11' r='3.4' fill='%23CB6038'/%3E%3Ccircle cx='16.3' cy='10.2' r='1.6' fill='%23f0a067'/%3E%3C/svg%3E" />
+<link rel="stylesheet" href="css/rollo.css?v=4" />
+</head>
+<body class="marsh-body">
+<a class="skip-link" href="about.html">About this game (text version)</a>
+
+<header class="mast" aria-label="Rollo">
+  <div class="mast__id">
+    <span class="wordmark">ROLLO</span>
+    <span class="sub">a small game about courage, after Rollo May</span>
+  </div>
+  <nav class="mast__nav">
+    <button type="button" class="toggle" data-sound aria-pressed="true">Sound: on</button>
+    <a href="about.html">About</a>
+    <a href="colophon.html">Colophon</a>
+    <a href="concepts.html">Concepts</a>
+  </nav>
+</header>
+
+<main class="stage">
+  <canvas id="marsh" aria-label="The marsh. A wordless crossing game: tap or use arrow keys to step from stone to stone. Stones shimmer until you commit to them. The About page describes everything in words."></canvas>
+  <noscript>
+    <div class="noscript">
+      <p>ROLLO is a small wordless game and needs JavaScript to be played. Nothing you do here is
+      recorded. The <a href="about.html">About page</a> carries the whole idea in words: courage,
+      after Rollo May — not the absence of fear, but the capacity to move ahead in spite of doubt
+      and despair. The stones ahead shimmer; looking longer never resolves them. Only stepping does.</p>
+    </div>
+  </noscript>
+</main>
+
+<script src="js/engine.js?v=4"></script>
+<script src="js/rollo.js?v=4"></script>
+<!-- GoatCounter: cookieless page-view counting only; no personal data; disclosed in the colophon -->
+<script data-goatcounter="https://rollo.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

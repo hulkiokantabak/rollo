@@ -1,0 +1,99 @@
+/* ROLLO — rollo.css
+ * Minimal chrome around a full-viewport marsh. The game carries the meaning;
+ * the page stays out of the way. System fonts only. Nothing fetched.
+ */
+:root {
+  --ground: #12100E;
+  --bone:   #E8E4DC;   /* 14.97:1 on ground */
+  --mute:   #9A938A;   /*  6.25:1           */
+  --faint:  #6B655D;   /* non-text hairlines */
+  --ember:  #CB6038;
+  --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0; background: var(--ground); color: var(--bone);
+  font-family: var(--sans); font-size: 15px; line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+body.marsh-body { overflow: hidden; }   /* only the game locks the viewport */
+a { color: var(--bone); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--faint); }
+a:hover { text-decoration-color: var(--mute); }
+:focus-visible { outline: 2px solid var(--ember); outline-offset: 3px; border-radius: 2px; }
+
+.skip-link {
+  position: absolute; left: -999px; top: 0; z-index: 60;
+  background: var(--bone); color: var(--ground); padding: .5em 1em;
+  font-size: .85rem; text-decoration: none; border-radius: 2px;
+}
+.skip-link:focus { left: 8px; top: 8px; }
+
+/* masthead floats over the marsh */
+.mast {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 20;
+  display: flex; justify-content: space-between; align-items: flex-start;
+  padding: max(10px, env(safe-area-inset-top)) 16px 10px;
+  pointer-events: none;
+  background: linear-gradient(rgba(18,16,14,0.85), rgba(18,16,14,0));
+}
+.mast__id { display: flex; flex-direction: column; gap: 2px; }
+.wordmark { font-weight: 600; letter-spacing: 0.22em; font-size: 15px; color: var(--bone); }
+.sub { font-size: 12px; color: var(--mute); letter-spacing: 0.02em; }
+.mast__nav { display: flex; gap: 6px; align-items: center; pointer-events: auto; }
+.mast__nav a {
+  font-size: 13px; color: var(--mute); text-decoration: none;
+  min-height: 44px; display: inline-flex; align-items: center; padding: 0 10px;
+}
+.mast__nav a:hover { color: var(--bone); }
+/* the once-only post-first-shore invitation: gentle, 0.5 Hz, color-only (photosafe) */
+.mast__nav a.glint { color: var(--ember); }
+@media (prefers-reduced-motion: no-preference) {
+  .mast__nav a.glint { animation: glint 2s ease-in-out 3; }
+  @keyframes glint { 0%, 100% { color: var(--mute); } 50% { color: var(--ember); } }
+}
+.toggle {
+  font-family: var(--sans); font-size: 13px; color: var(--mute);
+  background: transparent; border: 1px solid var(--faint); border-radius: 999px;
+  min-height: 44px; padding: 0 14px; cursor: pointer;
+}
+.toggle:hover { color: var(--bone); border-color: var(--mute); }
+
+/* the game stage only — reading pages (About/Colophon/Concepts) flow and scroll normally */
+main.stage { position: fixed; top: 0; right: 0; bottom: 0; left: 0; }
+#marsh { width: 100%; height: 100%; display: block; touch-action: none; }
+
+.noscript {
+  position: relative; z-index: 10; max-width: 42ch;
+  margin: 20vh auto 0; padding: 0 20px; color: var(--bone);
+}
+
+/* reading pages (about / colophon / concepts) */
+.page-body { overflow: auto; }
+.pagenav {
+  max-width: 44ch; margin: 0 auto;
+  padding: max(14px, env(safe-area-inset-top)) 24px 0;
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px;
+  font-size: 13px;
+}
+.pagenav .wm { font-weight: 600; letter-spacing: 0.22em; font-size: 14px; color: var(--bone); text-decoration: none; margin-right: 6px; }
+.pagenav a { color: var(--mute); text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; }
+.pagenav a:hover { color: var(--bone); }
+.pagenav a[aria-current="page"] { color: var(--bone); text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--faint); }
+.page {
+  max-width: 44ch; margin: 0 auto;
+  padding: 26px 24px 80px;
+}
+.page h1 { font-size: 23px; font-weight: 500; line-height: 1.32; margin: 0 0 20px; }
+.page h2 { font-size: 16px; font-weight: 600; margin: 30px 0 10px; }
+.page p { margin: 0 0 14px; color: var(--bone); font-size: 15.5px; }
+.page .ref { color: var(--mute); font-size: 13.5px; line-height: 1.5; }
+.page .eyebrow { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mute); font-weight: 500; margin: 0 0 14px; }
+.backhome { display: inline-block; margin-top: 34px; font-size: 14px; color: var(--mute); }
+
+@media (max-width: 30rem) {
+  .sub { font-size: 11px; }  /* the one framing line stays — phones need it most */
+}
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}

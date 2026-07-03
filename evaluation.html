@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://gc.zgo.at; style-src 'self'; img-src 'self' data: https://rollo.goatcounter.com; connect-src https://rollo.goatcounter.com; manifest-src 'self'; base-uri 'none'; form-action 'none'" />
+<title>Evaluation — ROLLO</title>
+<meta name="description" content="The public evaluation report for ROLLO: how it was built and verified, what three independent expert panels concluded — grades and criticisms intact — and what remains open." />
+<meta name="color-scheme" content="dark" />
+<meta name="theme-color" content="#12100E" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2312100E'/%3E%3Cellipse cx='10' cy='24' rx='5' ry='2.6' fill='%234a453f'/%3E%3Cellipse cx='23' cy='21' rx='4.4' ry='2.3' fill='%234a453f' opacity='0.5'/%3E%3Ccircle cx='17' cy='11' r='3.4' fill='%23CB6038'/%3E%3Ccircle cx='16.3' cy='10.2' r='1.6' fill='%23f0a067'/%3E%3C/svg%3E" />
+<link rel="stylesheet" href="css/rollo.css?v=4" />
+</head>
+<body class="page-body">
+<nav class="pagenav" aria-label="Pages">
+  <a class="wm" href="./">ROLLO</a>
+  <a href="./">The marsh</a>
+  <a href="about.html">About</a>
+  <a href="colophon.html">Colophon</a>
+  <a href="concepts.html">Concepts</a>
+  <a href="evaluation.html" aria-current="page">Evaluation</a>
+</nav>
+<main class="page">
+  <p class="eyebrow">Rollo · Evaluation</p>
+  <h1>The public evaluation report — with its criticisms intact.</h1>
+
+  <p>This page exists because honesty is this project's whole product. It says how ROLLO was built
+  and tested, what three independent expert panels concluded about it — grades and objections kept,
+  not smoothed — and what remains open. It is written to be pressure-tested: if you find an
+  overclaim here, that is a bug.</p>
+
+  <h2>The honest frame, first</h2>
+  <p>This concept <strong>failed once, in public</strong>. Its first version was a text page; the
+  author looked at it and ruled it a failure, flatly. That verdict outranked every simulated panel
+  that had graded it promising, and it taught the lesson the game is built on: <em>text depicts;
+  mechanics enact</em>. The failed version is archived in the project's record, not deleted.</p>
+  <p>Second: every panel and playtester below is <strong>model-simulated</strong> — the same kind
+  of intelligence that built the game, prompted into independent, adversarial roles. That produces
+  real findings (many, verified in code and runtime), but it is not the same as human judgment.
+  The author is the one human gate this project has, and their verdict has already overruled the
+  machines once. Weight everything below accordingly.</p>
+
+  <h2>What was verified, mechanically</h2>
+  <p>These are measured or source-checkable, not opinions. A pathfinding driver crossed
+  <strong>58 consecutive procedural fields with zero dead-ends and zero console errors</strong> —
+  a claim that was then <strong>independently replicated</strong> by an adversarial process panel
+  (62 further crossings, zero dead-ends; their driver wrongly accused the game three times, and
+  three times the fault was the driver's). A product panel drove <strong>200+ fields across three
+  seeds</strong> and verified the game's governing laws as live behavior: the pairing law (a field
+  carrying a new difficulty always carries a new kindness — zero violations in 133 audited fields),
+  the breath rule (after three pressured fields, a rest — zero streaks of four), honest dice (no
+  rendered attribute ever correlates with whether a stone holds), and photosensitivity margins
+  (every oscillation in the game measured under 1&nbsp;Hz, a third of the seizure-safety
+  threshold, with a static reduced-motion form for every effect). One qualifier the panels asked
+  for and get: the zero-dead-ends claim holds <em>with backtracking allowed</em> — wandering off
+  the route can require a step backward onto sunk footing, which is footing on purpose.</p>
+  <p class="ref">Scope, honestly: those measurements describe the build the panels examined. A
+  final, pre-ratified texture round shipped <em>after</em> those grades (see below); on that final
+  build the same driver discipline was re-run — <strong>275 consecutive crossings, zero dead-ends,
+  zero console errors</strong>, including a dozen crossings under full reduced motion, the pairing
+  law and breath rule re-audited clean across the driven fields, and every new effect
+  frequency-checked under the same 1&nbsp;Hz law.</p>
+
+  <h2>Three independent panels, three verdicts</h2>
+  <p class="ref">Each panel worked without sight of the others' reports. Full texts live in the
+  project repository; grades and their one-line verdicts follow, unedited.</p>
+
+  <p><strong>Process Evaluation Board — B+.</strong> <em>"Three times our driver accused the game
+  of a dead-end, and three times the fault was ours — the empirical layer now survives adversarial
+  replication; it is the paperwork that no longer would."</em> The board replicated the headline
+  verification claim itself, and then found the round's decision log had gone stale while the
+  building raced ahead — decisions made in code but not written down. (The log was backfilled the
+  same day; the criticism stands as a caution, and this board has earned the right to check again.)</p>
+
+  <p><strong>Product Review Panel — A−</strong> (up from B+ before the texture expansion).
+  <em>"The pairing law is verified across 133 fields and yet leaks in experience through a grace
+  that doesn't exist: 'chord' is a kindness the game promises and forgot to build."</em> The panel
+  called one late mechanic — stones that hold you and keep their broken mirror anyway — "May's own
+  sentence made playable," and the About page's philosophy section "the best prose in the project."
+  Their sharpest findings — the silent chord, a canon rule the code didn't enforce, and the
+  deepest rare field living beyond any real session's reach — were all <strong>fixed the same
+  day</strong> and are noted below.</p>
+
+  <p><strong>Web Quality Board — A−.</strong> <em>"The core earned an A this round; the periphery
+  declined it on the project's behalf."</em> Deployment byte-identical to source; 0.18&nbsp;ms per
+  frame measured; the six new animated graces frequency-audited clean; reduced-motion parity
+  "implemented, not aspirational." Their repeat periphery findings are listed honestly below.</p>
+
+  <h2>What shipped after these grades</h2>
+  <p class="ref">The grades above describe the build the panels saw. After them, the author played
+  that build, passed it, and directed one final round: the council's own pre-ratified deferred
+  designs — a fork in the route whose untaken branch settles solid behind you, a far-off second
+  ember crossing its own line, an answering bell, an answering owl, far-shore birds — plus the
+  idle-redraw decision below, all built under the same laws and re-verified as described above.
+  The panels have not graded the final build; nothing here pretends they did.</p>
+
+  <h2>What their criticism changed, same day</h2>
+  <p class="ref">The <strong>chord grace now sounds</strong> — three soft tones across the water,
+  every half-minute or so, instead of a name with nothing behind it. The <strong>drift rule is
+  enforced in code</strong>, not just in a comment: the guaranteed route never wanders. The
+  <strong>still water</strong> — a rare field with no golden road at all, the expansion's deepest
+  idea — is now guaranteed within a player's first three rare encounters instead of hiding at
+  crossing 46. <strong>Tending is visible</strong> now as well as audible: a thin steady ring
+  around the ember, so a muted player with reduced motion still knows the game understood.
+  A frame-rate timing bug in the still water's bell, stale style-caching on the reading pages,
+  and the missing social-share card were also fixed.</p>
+
+  <h2>What remains open, honestly — and what closed</h2>
+  <p class="ref">— <strong>The author played the texture build and passed it</strong> — the one
+  human gate, recorded in the decision log — and then directed the final round above. That final
+  round itself has had machine verification only; the author's look at it, like everything here,
+  remains the standing gate it always is.<br />
+  — <strong>The page-view counter is live</strong>: the author registered the GoatCounter site
+  code. Closed.<br />
+  — <strong>The idle-redraw question is decided</strong> (it was an open disagreement for two
+  rounds): while the world is <em>awake</em> — even idle — the marsh renders at full rate, always;
+  only when the game's own apathy system has declared the world asleep does the render drop to a
+  ~20&nbsp;fps floor, never zero, restored the instant a hand touches the device. Honest scope: the
+  battery saving applies only to a tab abandoned mid-marsh — shores, the golden road, and the
+  landing page never downshift, by design. Both panel dissents are preserved in the decision
+  log, not smoothed.<br />
+  — <strong>The series hub on KALÓN</strong> now lists this concept correctly. Closed.<br />
+  — The evaluating panels remain the same model family as the builder. A genuinely
+  different-architecture judge — ideally you — has still not scored this work. That is what this
+  page is for.</p>
+
+  <h2>Questions for you, the independent evaluator</h2>
+  <p>Play three crossings before reading anything else. Did you feel <em>in spite of</em> at least
+  once — at a shimmering stone, or at the moment you stepped off the gold road? Is the wordless
+  bet right, or does the meaning arrive only through the About page? Does anything here put fear
+  back on the throne, or flatten Rollo May into uplift? And if you could order exactly one change,
+  what would it be?</p>
+
+  <p class="ref">ROLLO is Concept II of the Experimental Concepts series — I is
+  <a href="https://hulkiokantabak.github.io/kalon/" target="_blank" rel="noopener noreferrer">KALÓN</a>
+  (beauty). Built by Claude (Anthropic) as chair with Hulki Okan Tabak as author, who directs and
+  ratifies. The full workshop — councils, playtests, audits, raw panel outputs with telemetry, the
+  archived failed first version, and the complete decision log — lives in a private repository and
+  is available to serious evaluators through the author. Last updated 2026-07-03 (final round).</p>
+
+  <p><a class="backhome" href="./">&larr; Back to the marsh</a> &nbsp;·&nbsp;
+     <a class="backhome" href="about.html">About</a> &nbsp;·&nbsp;
+     <a class="backhome" href="colophon.html">Colophon</a></p>
+</main>
+<script data-goatcounter="https://rollo.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
